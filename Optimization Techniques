@@ -1,0 +1,33 @@
+ # let’s analyze the shipping cost of Carriers
+shipping_cost_chart = px.bar(data, x='Shipping carriers', 
+                             y='Shipping costs', 
+                             title='Shipping Costs by Carrier')
+shipping_cost_chart.show()
+
+# Let’s have a look at the cost distribution by transportation mode
+transportation_chart = px.pie(data, 
+                              values='Costs', 
+                              names='Transportation modes', 
+                              title='Cost Distribution by Transportation Mode',
+                              hole=0.5,
+                              color_discrete_sequence=px.colors.qualitative.Pastel)
+transportation_chart.show()
+
+# lets have a look at the average defect rate of all product types
+defect_rates_by_product = data.groupby('Product type')['Defect rates'].mean().reset_index()
+
+fig = px.bar(defect_rates_by_product, x='Product type', y='Defect rates',
+             title='Average Defect Rates by Product Type')
+fig.show()
+
+#  let’s have a look at the defect rates by mode of transportation
+pivot_table = pd.pivot_table(data, values='Defect rates', 
+                             index=['Transportation modes'], 
+                             aggfunc='mean')
+
+transportation_chart = px.pie(values=pivot_table["Defect rates"], 
+                              names=pivot_table.index, 
+                              title='Defect Rates by Transportation Mode',
+                              hole=0.5,
+                              color_discrete_sequence=px.colors.qualitative.Pastel)
+transportation_chart.show()
