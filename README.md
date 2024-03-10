@@ -1,7 +1,10 @@
 # Optimizing Makeup Supply Chain: Data-Driven Efficiency
 
 ## Overview:
-This project focuses on analyzing a Fashion and Beauty startup's supply chain data for Makeup products. Our goal is to optimize performance, enhance customer satisfaction, and reduce costs.
+This project focuses on analyzing a Fashion and Beauty startup's supply chain data for Makeup products. Our goal is to optimize performance, enhance customer satisfaction, and reduce costs. 
+
+The data set contains : Product Type, SKU, Price, Availability, Number of products sold, Revenue generated, Customer demographics, Stock levels, Lead times, Order quantities, Shipping times, Shipping carriers, Shipping costs, Supplier name, Location, Lead time, Production volumes, Manufacturing lead time, Manufacturing costs, Inspection results, Defect rates, Transportation modes, Routes, Costs. 
+
 
 ## Objectives:
 1. **Inventory Management:** Optimize stock levels and lead times to minimize carrying costs.
